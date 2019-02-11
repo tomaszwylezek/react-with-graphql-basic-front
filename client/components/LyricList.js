@@ -1,10 +1,22 @@
 import React, { Component } from "react";
 
 class LyricList extends Component {
+  onLike(id) {
+
+  }
+
   renderLyrics() {
     return this.props.lyrics.map(({ id, content }) => (
       <li className="collection-item" key={id}>
         {content}
+        <i
+          className="material-icons"
+          onClick={() => {
+            this.onLike(id);
+          }}
+        >
+          thumb_up
+        </i>
       </li>
     ));
   }
