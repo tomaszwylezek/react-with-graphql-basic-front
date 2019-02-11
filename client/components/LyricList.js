@@ -1,15 +1,16 @@
-import React, { Component} from 'react';
+import React, { Component } from "react";
 
-class LyricList extends  Component{
+class LyricList extends Component {
+  renderLyrics() {
+    return this.props.lyrics.map(({ id, content }) => (
+      <li className="collection-item" key={id}>
+        {content}
+      </li>
+    ));
+  }
   render() {
-    return (
-
-      <ul>
-        <li>babla</li>
-      </ul>
-    )
+    return <ul className="collection">{this.renderLyrics()}</ul>;
   }
 }
 
-
-export default LyricList
+export default LyricList;
